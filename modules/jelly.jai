@@ -178,7 +178,7 @@ tick :: (jelly_ui: *Element, my_window: *NSWindow) {
 
 // This function's main job is to take the struct literal passed in 
 // and turn it into a dynamically allocated variable
-init :: (element: Element) -> *Element {
+init :: (element: Element, font_name: string) -> *Element {
 
     // Allocate a new Element on the heap
     allocated_element: *Element = alloc(size_of(Element));
@@ -195,7 +195,7 @@ init :: (element: Element) -> *Element {
 
         // For each child, recursively initialize and copy into new array
         for 0..child_count - 1 {
-            child_ptr := init(element.children[it]);
+            child_ptr := init(element.children[it], font_name);
             allocated_children[it] = child_ptr;
         }
 
@@ -204,7 +204,7 @@ init :: (element: Element) -> *Element {
 
     //Initialise the font for any elements with text
     if(allocated_element.text.count > 0){
-        allocated_element.font = Simp.get_font_at_size(".", "Chicago.ttf", allocated_element.font_size);
+        allocated_element.font = Simp.get_font_at_size(".",font_name, allocated_element.font_size);
     }
 
     // Allocate the text field

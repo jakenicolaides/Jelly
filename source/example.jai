@@ -13,7 +13,6 @@ main :: () {
     my_window = create_window(window_width, window_height, "JELLY EXAMPLE", wanted_msaa = WANTED_MSAA);
     msaa := Simp.prepare_window(my_window, wanted_msaa = WANTED_MSAA);
     window_width, window_height = Simp.get_render_dimensions(my_window);
-
     Simp.set_render_target(my_window, .LEFT_HANDED);
    
     jelly_ui: *Jelly.Element = Jelly.init(.{
@@ -142,7 +141,7 @@ main :: () {
                 ]
             }
         ]
-    });
+    }, "Chicago.ttf");
 
     quit := false;
     want_screenshot := false;
