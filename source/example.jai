@@ -10,7 +10,7 @@ DEBUG_COLOUR: Vector4 : .{1, 0, 0, 1}; // Bright Red
 main :: () {
 
     WANTED_MSAA :: 8;
-    my_window = create_window(window_width, window_height, "JELLY", wanted_msaa = WANTED_MSAA);
+    my_window = create_window(window_width, window_height, "JELLY EXAMPLE", wanted_msaa = WANTED_MSAA);
     msaa := Simp.prepare_window(my_window, wanted_msaa = WANTED_MSAA);
     window_width, window_height = Simp.get_render_dimensions(my_window);
 
