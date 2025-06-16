@@ -37,13 +37,10 @@ OUTPUT_EXECUTABLE_NAME := "Jelly";
 
     compiler_begin_intercept(w);
     add_build_file("source/example.jai", w);
-    //add_build_file("source/jelly.jai", w);
     compiler_end_intercept(w);
 
 };
 
-
-//#import "Toolchains/Android";
 #import "Basic";
 #import "Compiler";
 #import "File";
